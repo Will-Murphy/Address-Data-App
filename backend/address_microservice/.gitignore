@@ -1,0 +1,8 @@
+config.cfg
+**/out.csv
+src/__pycache__/
+__pycache__/
+*.py[cod]
+*.DS_store
+feedback_notes.txt
+
