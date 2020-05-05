@@ -1,32 +1,33 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
+
+import address_service_wrapper as address_service
 #from flask_cors import CORS
 
-from address_microservice.src import main_stream as addr_service_stream
-from address_microservice.src import main_batch as addr_service_batch
-
-ADDR_SERVICE_CONFIG = "./address_microservice/config.cfg" 
-VALIDATE_AND_GEOCODE = "0"
-VALIDATE = "1"
-GEOCODE = "2"
-REVERSE_GEOCODE = "3"
-     
 app = Flask(__name__)
 #CORS(app)
 
-
-@app.route('/geocode')
-def geocode(): 
-    args = {
-        'options': GEOCODE,  
-        'config': ADDR_SERVICE_CONFIG,
-        'input': '31 Carey Circle, Canton, MA'
-    }
-
-    address_coordinates = addr_service_stream.run(args)
-    return address_coordinates
-
 @app.route('/')
-def validate():
-    return "hi"
+def hello():
+    return "Welcome to the Address Data App!"
+
+
+@app.route('/geocode/<string:address>')
+def geocode_one(address): 
+    return address_service.geocode_one(address)
+
+@app.route('/validate/<string:address>')
+def validate_one(address):
+    return address_service.validate_one(address)
+
+#TODO: removed parammeters for testing 
+@app.route('/validate-geocode/<string:address>')
+def validate_and_geocode_one(address):
+    return address_service.validate_and_geocode_one(address)
+
+@app.route('/reverse-geocode/<string:coordinates>')
+def reverse_geocode_one(coordinates):
+    return address_service.reverse_geocode_one(coordinates)
+
+
 
 

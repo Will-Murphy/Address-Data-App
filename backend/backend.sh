@@ -4,9 +4,9 @@ source backend/bin/activate
 python -m flask run 
 
 
-##   To Run 
+##  To Run 
 # chmod u+x backend.sh
 # ./backend.sh & ( & to run in backround)
 
 ##  Kill Script running in backround 
-# pkill -9 -f <script_name> 
+# kill -9  <pid> 

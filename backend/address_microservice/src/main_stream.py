@@ -16,8 +16,6 @@ see readme for usage details.
 def run(args=None):
 
     address_service = SmartyAddressService()
-
-    print(args['config'])
     address_service.load_config(args['config'])
 
     address_service_2 = OpenCageAddressService()
