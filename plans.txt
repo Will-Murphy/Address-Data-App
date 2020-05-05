@@ -1,0 +1,3 @@
+- Write Simple frontend in angular 
+- figure our how to host backend/frontend together for free 
+- enable batch file processing 
