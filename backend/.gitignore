@@ -105,4 +105,4 @@ ENV/
 .DS_Store
 
 #Address service keys
-./address_microservice/config.cfg
+address_service_config.cfg

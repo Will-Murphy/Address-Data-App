@@ -1,3 +1,5 @@
 - Write Simple frontend in angular 
-- figure our how to host backend/frontend together for free 
+- get stream address processing working
 - enable batch file processing 
+- figure our how to host backend/frontend together for free 
+ 

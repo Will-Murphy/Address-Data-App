@@ -4,7 +4,7 @@ from address_service_wrapper import AddressServiceWrapper
 #from flask_cors import CORS
 
 app = Flask(__name__)
-address_service = AddressServiceWrapper(config = "./address_microservice/config.cfg")
+address_service = AddressServiceWrapper(config = "./address_service_config.cfg")
 #CORS(app)
 
 @app.route('/')
