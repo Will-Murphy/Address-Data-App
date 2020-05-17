@@ -1,9 +1,20 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span> Address Data App</span> 
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">place_icon</mat-icon>
+    <mat-icon class="ml2 example-icon" aria-hidden="false" aria-label="Example user verified icon">place_icon</mat-icon>
   </mat-toolbar-row>
-
 </mat-toolbar>
+
+<mat-tab-group>
+  <mat-tab label="Stream Address Processing"> 
+    <app-stream-dashboard> </app-stream-dashboard>
+  </mat-tab>
+  <mat-tab label="Batch Address Processing"> 
+    <app-batch-dashboard> </app-batch-dashboard>
+  </mat-tab>
+
+</mat-tab-group>
+ 
+
 
 <router-outlet></router-outlet>

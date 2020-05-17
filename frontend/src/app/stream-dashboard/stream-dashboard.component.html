@@ -1,0 +1,96 @@
+<mat-accordion >
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Address Validation
+        </mat-panel-title>
+        <mat-panel-description>
+           Enter an address to be validated and standardized
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <mat-label> Address </mat-label>
+        <input #validateInputField matInput>
+      </mat-form-field>
+     <button mat-button color="primary" 
+             (click)="validateAddress(validateInputField.value)" 
+             class="ml2">
+          Validate 
+      </button>
+      <mat-card *ngIf="validationInput"> 
+       <div> 
+            <span class="mat-h4 "> Input: </span> 
+            <span class="mat-body-strong"> {{validationInput}} </span>
+      </div>
+      <div> 
+            <span class="mat-h4"> Results: </span> 
+            <span class="mat-body-strong"> {{validationOutput}} </span>
+      </div> 
+      </mat-card>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Geocoding 
+          </mat-panel-title>
+          <mat-panel-description>
+             Enter an address to get its coordinates
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label> Address </mat-label>
+          <input #geocodeInputField matInput>
+        </mat-form-field>
+       <button mat-button color="primary" 
+               (click)="geocodeAddress(geocodeInputField.value)" 
+               class="ml2">
+             Geocode
+        </button>
+        <mat-card *ngIf="geocodeInput"> 
+         <div> 
+              <span class="mat-h4 "> Input: </span> 
+              <span class="mat-body-strong"> {{geocodeInput}} </span>
+        </div>
+        <div> 
+              <span class="mat-h4"> Results: </span> 
+              <span class="mat-body-strong"> {{geocodeOutput}} </span>
+        </div> 
+        </mat-card>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Reverse Geocoding 
+          </mat-panel-title>
+          <mat-panel-description>
+             Enter a lat, long coordinate pair to get an address
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Latitude</mat-label>
+          <input #latField matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Longitude</mat-label>
+          <input #longField matInput>
+        </mat-form-field>
+        <button mat-button color="primary" 
+               (click)="reverseGeocodeAddress(latField.value, longField.value)" 
+               class="ml2">
+              Reverse Geocode
+        </button>
+        <mat-card *ngIf="addressLat && addressLong"> 
+         <div> 
+              <span class="mat-h4 "> Input: </span> 
+              <span class="mat-body-strong"> {{addressLat}},  {{addressLong}} </span>
+        </div>
+        <div> 
+              <span class="mat-h4"> Results: </span> 
+              <span class="mat-body-strong"> {{revGeocodeOutput}} </span>
+        </div> 
+        </mat-card>
+      </mat-expansion-panel>
+    
+  </mat-accordion>

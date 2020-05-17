@@ -4,7 +4,11 @@
 
 export const environment = {
   production: false
+  
 };
+
+// Backend url 
+export const API_URL = 'http://localhost:5000';
 
 /*
  * For easier debugging in development mode, you can import the following file

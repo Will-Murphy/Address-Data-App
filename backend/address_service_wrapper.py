@@ -14,8 +14,8 @@ class AddressServiceWrapper():
     GEOCODE = "2"
     REVERSE_GEOCODE = "3"
  
-    def __init__(self, path_to_config):
-        self.config = path_to_config # path to config from cwd where wrapper used
+    def __init__(self, config='./DEFINE CONFIG FILE'):
+        self.config = config # path to config from cwd where wrapper used
 
     def validate_one(self, address):
         """ stream address validation """
